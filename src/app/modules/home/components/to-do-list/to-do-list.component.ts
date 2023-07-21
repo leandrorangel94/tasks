@@ -16,6 +16,10 @@ export class ToDoListComponent implements OnInit {
 
   ngOnInit(): void {}
 
+  public setEmitTaskList(event: string): void {
+    if (event.length) this.taskList.push({ task: event, checked: false });
+  }
+
   public deleteTaskListItem(event: number): void {
     this.taskList.splice(event, 1);
   }
