@@ -4,7 +4,7 @@
       <input type="checkbox" [(ngModel)]="item.checked" />
       <input type="text" [(ngModel)]="item.task" />
 
-      <button>
+      <button (click)="deleteTaskListItem(i)">
         <img src="assets/icons/icon-trash.svg" alt="ícone de lixeira" />
       </button>
 
@@ -14,4 +14,7 @@
 </section>
 
 <app-to-do-input-add-items />
-<app-to-do-button-delete-all *ngIf="taskList.length" />
+<app-to-do-button-delete-all
+  (click)="deleteAllTaskListItems()"
+  *ngIf="taskList.length"
+/>
